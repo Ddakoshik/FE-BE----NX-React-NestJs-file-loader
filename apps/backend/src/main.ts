@@ -1,13 +1,10 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 import { join } from 'path';
+
 
 import { AppModule } from './app/app.module';
 
@@ -17,6 +14,7 @@ async function bootstrap() {
   const port = process.env.PORT || 3333;
 
   app.setGlobalPrefix(globalPrefix);
+  app.useGlobalPipes(new ValidationPipe())
 
   // HBS generate template
   app.setBaseViewsDir(join(__dirname, 'assets', 'views'));

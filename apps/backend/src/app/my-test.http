@@ -1,6 +1,4 @@
-get http://localhost:3333/api/tasks
 
-###
 
 post http://localhost:3333/api/tasks
 content-type: application/json
@@ -8,4 +6,27 @@ content-type: application/json
 {
     "title": "sample",
     "description": "description Test"
+}
+
+###
+
+get http://localhost:3333/api/tasks
+
+###
+
+get http://localhost:3333/api/tasks/9701600e-8aa2-4769-99f9-6b6baf456920
+
+
+###
+
+delete http://localhost:3333/api/tasks/5fa1fd19-04f7-47d5-8172-392943c5cc14
+
+###
+
+patch http://localhost:3333/api/tasks/7881895e-4885-4ec3-b93c-48222b6ec770/status
+
+content-type: application/json
+
+{
+    "status": "DONE"
 }
