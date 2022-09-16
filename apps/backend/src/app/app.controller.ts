@@ -11,17 +11,13 @@ export class AppController {
     private todosService: TodoService
   ) {}
 
-  // @Get()
-  // getData() {
-  //   return this.appService.getData();
-  // }
 
-  @Get('api')
+  @Get('')
   getData() {
     return this.todosService.getTodos();
   }
 
-  @Get('api/index')
+  @Get('index')
   @Render('index')
   root() {
     return {
