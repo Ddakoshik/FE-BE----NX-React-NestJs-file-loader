@@ -7,6 +7,7 @@ import { join } from 'path';
 
 
 import { AppModule } from './app/app.module';
+import { TransformInterceptor } from './app/transform.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -14,7 +15,8 @@ async function bootstrap() {
   const port = process.env.PORT || 3333;
 
   app.setGlobalPrefix(globalPrefix);
-  app.useGlobalPipes(new ValidationPipe())
+  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalInterceptors(new TransformInterceptor());
 
   // HBS generate template
   app.setBaseViewsDir(join(__dirname, 'assets', 'views'));

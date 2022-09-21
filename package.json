@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "start-apps": "nx run-many --parallel --target=serve --projects=backend,frontend",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test"
@@ -10,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/passport": "^9.0.0",
@@ -47,12 +49,12 @@
     "@nrwl/web": "14.7.5",
     "@nrwl/workspace": "14.7.5",
     "@testing-library/react": "13.3.0",
+    "@types/bcrypt": "^5.0.0",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",
+    "@types/passport-jwt": "^3.0.6",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
-    "@types/bcrypt": "^5.0.0",
-    "@types/passport-jwt": "^3.0.6",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "babel-jest": "28.1.1",
